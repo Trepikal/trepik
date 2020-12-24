@@ -19,11 +19,31 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.green[600],
       ),
-      body: Container(
-        color: Colors.red[100],
-        child: Text("Hello"),
-        padding: EdgeInsets.fromLTRB(10, 20, 10, 20),
-        margin: EdgeInsets.fromLTRB(10, 20, 40, 80)
+      body: Row(
+        children: <Widget>[
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.cyan,
+              child: Text('1'),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.amber,
+              child: Text('2'),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.purple,
+              child: Text('3'),
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         child: Center(
