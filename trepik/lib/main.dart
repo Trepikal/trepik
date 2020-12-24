@@ -4,7 +4,33 @@ void main() => runApp(MaterialApp(
       home: HobbitCard(),
     ));
 
-class HobbitCard extends StatelessWidget {
+class HobbitCard extends StatefulWidget {
+  @override
+  _HobbitCardState createState() => _HobbitCardState();
+}
+
+class _HobbitCardState extends State<HobbitCard> {
+
+  int frodoMileage = 0;
+  int bilboMileage = 0;
+  int totalMileage = 0;
+
+  void addMileage(String mileageType, int miles) {
+    if (mileageType == 'Frodo') {
+      // one does not merely update their state...
+      setState(() {
+        frodoMileage +=10;
+      });
+    } else {
+      setState(() {
+        bilboMileage += miles;
+      });
+    }
+    setState(() {
+      totalMileage += miles;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +85,7 @@ class HobbitCard extends StatelessWidget {
               SizedBox(
                 height: 10.0,
               ),
-              Text("86.7",
+              Text('$totalMileage',
                   style: TextStyle(
                     color: Colors.greenAccent[700],
                     letterSpacing: 2.0,
@@ -108,7 +134,7 @@ class HobbitCard extends StatelessWidget {
                                 )),
                             SizedBox(height: 10.0),
                             Text(
-                              "85.4/1800",
+                              '$frodoMileage/1800',
                               style: TextStyle(
                                 color: Colors.greenAccent[700],
                                 letterSpacing: 1.5,
@@ -140,7 +166,7 @@ class HobbitCard extends StatelessWidget {
                                 )),
                             SizedBox(height: 10.0),
                             Text(
-                              "1.3/1600",
+                              '$bilboMileage/1600',
                               style: TextStyle(
                                 color: Colors.greenAccent[700],
                                 letterSpacing: 1.5,
@@ -157,6 +183,16 @@ class HobbitCard extends StatelessWidget {
               ),
             ],
           ),
-        ));
+        ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        backgroundColor: Colors.greenAccent[700],
+        onPressed: () {
+          addMileage("Frodo", 10);
+        },
+      ),
+    );
   }
 }
+
+
