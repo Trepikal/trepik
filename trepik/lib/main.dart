@@ -1,198 +1,134 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-      home: HobbitCard(),
-    ));
+  home: Treks(),
+));
 
-class HobbitCard extends StatefulWidget {
-  @override
-  _HobbitCardState createState() => _HobbitCardState();
+class Trek {
+  String name;
+  String description;
+  int distance;
+  int difficulty;
+  bool done;
+
+  Trek(String name, String description, int distance, int difficulty, bool done) {
+    this.name = name;
+    this.description = description;
+    this.distance = distance;
+    this.difficulty = difficulty;
+    this.done = done;
+  }
 }
 
-class _HobbitCardState extends State<HobbitCard> {
+class Treks extends StatefulWidget {
+  @override
+  _TreksState createState() => _TreksState();
+}
 
-  int frodoMileage = 0;
-  int bilboMileage = 0;
-  int totalMileage = 0;
+class _TreksState extends State<Treks> {
 
-  void addMileage(String mileageType, int miles) {
-    if (mileageType == 'Frodo') {
-      // one does not merely update their state...
-      setState(() {
-        frodoMileage +=10;
-      });
-    } else {
-      setState(() {
-        bilboMileage += miles;
-      });
-    }
-    setState(() {
-      totalMileage += miles;
-    });
-  }
+  List<Trek> treks = [
+    Trek("Frodo's Journey", "Simply Walk into Mordor.", 1800, 2, false),
+    Trek("Bilbo's Journey", "There and Back Again", 1600, 1, false),
+    Trek("Lost City of the Incas", "Into the Heart of the Amazon", 1200, 3, false),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Text(
-            "PROFILE",
-            style: TextStyle(
-              color: Colors.grey,
-              letterSpacing: 2.0,
-            ),
-          ),
-          centerTitle: true,
-          backgroundColor: Colors.grey[100],
-          elevation: 0,
-        ),
-        body: Padding(
-          padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: CircleAvatar(
-                    radius: 50.0,
-                    backgroundImage: AssetImage("assets/merry.jpg")),
-              ),
-              Divider(
-                height: 60.0,
-                color: Colors.grey[800],
-              ),
-              Text("NAME",
-                  style: TextStyle(
-                    color: Colors.grey[600],
-                    letterSpacing: 2.0,
-                  )),
-              SizedBox(
-                height: 10.0,
-              ),
-              Text("Merry Brandybuck",
-                  style: TextStyle(
-                    color: Colors.greenAccent[700],
-                    letterSpacing: 2.0,
-                    fontSize: 28.0,
-                    fontWeight: FontWeight.bold,
-                  )),
-              SizedBox(height: 30.0),
-              Text("TOTAL MILEAGE",
-                  style: TextStyle(
-                    color: Colors.grey[600],
-                    letterSpacing: 2.0,
-                  )),
-              SizedBox(
-                height: 10.0,
-              ),
-              Text('$totalMileage',
-                  style: TextStyle(
-                    color: Colors.greenAccent[700],
-                    letterSpacing: 2.0,
-                    fontSize: 28.0,
-                    fontWeight: FontWeight.bold,
-                  )),
-              SizedBox(height: 20.0),
-              Row(children: [
-                Icon(Icons.map, color: Colors.greenAccent[700]),
-                SizedBox(width: 10.0),
-                Text("Brandy Hall, Buckland",
-                    style:
-                        TextStyle(color: Colors.grey[500], letterSpacing: 1.5))
-              ]),
-              Divider(
-                height: 40.0,
-                color: Colors.grey[800],
-              ),
-              Text(
-                "TREKS",
-                style: TextStyle(
-                  color: Colors.grey[800],
-                  letterSpacing: 2.0,
-                ),
-              ),
-              SizedBox(height: 10.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Card(
-                      color: Colors.grey[100],
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.public,
-                              color: Colors.greenAccent[700],
-                            ),
-                            SizedBox(height: 10.0),
-                            Text("Frodo's Journey",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  letterSpacing: 2.0,
-                                )),
-                            SizedBox(height: 10.0),
-                            Text(
-                              '$frodoMileage/1800',
-                              style: TextStyle(
-                                color: Colors.greenAccent[700],
-                                letterSpacing: 1.5,
-                                fontSize: 25,
-                              ),
-                            ),
-                            SizedBox(height: 14.0),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Card(
-                      color: Colors.grey[100],
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            Icon(
-                              Icons.public,
-                              color: Colors.greenAccent[700],
-                            ),
-                            SizedBox(height: 10.0),
-                            Text("Bilbo's Journey",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  letterSpacing: 2.0,
-                                )),
-                            SizedBox(height: 10.0),
-                            Text(
-                              '$bilboMileage/1600',
-                              style: TextStyle(
-                                color: Colors.greenAccent[700],
-                                letterSpacing: 1.5,
-                                fontSize: 25,
-                              ),
-                            ),
-                            SizedBox(height: 14.0),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
+      appBar: AppBar(
+        backgroundColor: Colors.grey[300],
+        centerTitle: true,
+        elevation: 0,
+        title: Text(
+          "TREPIK",
+          style: TextStyle(
+            color: Colors.grey,
+            letterSpacing: 2.0,
           ),
         ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        backgroundColor: Colors.greenAccent[700],
-        onPressed: () {
-          addMileage("Frodo", 10);
-        },
       ),
+      body: Container(
+        color: Colors.grey[100],
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: ListView (
+            // for some reason, just making it ListView made it stretch
+            // crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: treks.map((trek) {
+              return Card(
+                elevation: 0,
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        trek.name,
+                        style: TextStyle(
+                          color: Colors.grey[600],
+                          fontSize: 20.0,
+                          letterSpacing: 2.0,
+                        ),
+                      ),
+                      SizedBox(height: 5.0),
+                      Text(
+                        trek.description,
+                        style: TextStyle(
+                          color: Colors.grey[500],
+                          letterSpacing: 1.5,
+                        ),
+                      ),
+                      Divider(
+                        height: 25.0,
+                        color: Colors.grey,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                "DISTANCE",
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  letterSpacing: 2.0,
+                                ),
+                              ),
+                              SizedBox(height: 10.0),
+                              Text(
+                                '${trek.distance}',
+                                style: TextStyle(
+                                  color: Colors.greenAccent[700],
+                                  fontSize: 18.0,
+                                  letterSpacing: 2.0,
+                                )
+                              ),
+                            ],
+                          ),
+                          FlatButton(
+                            color: Colors.greenAccent[700],
+                            onPressed: (){},
+                            child: Text(
+                              "START",
+                              style: TextStyle(
+                                color: Colors.white,
+                                letterSpacing: 2.0,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            }).toList(),
+          ),
+        ),
+      )
     );
   }
 }
-
-
