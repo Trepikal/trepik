@@ -3,8 +3,8 @@ import './trekCard.dart';
 import './treks.dart';
 
 void main() => runApp(MaterialApp(
-      home: Treks(),
-    ));
+  home: Treks(),
+));
 
 class Treks extends StatefulWidget {
   @override
@@ -35,7 +35,10 @@ class _TreksState extends State<Treks> {
               // for some reason, just making it ListView made it stretch
               // crossAxisAlignment: CrossAxisAlignment.stretch,
               children: treks.map((trek) {
-                return TrekCard(trek: trek);
+                return TrekCard(
+                  trek: trek,
+                  start: startTrek
+                );
               }).toList(),
             ),
           ),

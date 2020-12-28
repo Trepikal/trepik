@@ -1,5 +1,12 @@
 import './trek.dart';
 
+startTrek(Trek trek) {
+  print(trek.difficulty);
+  if (trek.difficulty >= 3) {
+    print("Are you certain?");
+  }
+}
+
 List<Trek> treks = [
     Trek(
         "Frodo's Journey",

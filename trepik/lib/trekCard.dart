@@ -3,7 +3,8 @@ import './trek.dart';
 
 class TrekCard extends StatelessWidget {
   final Trek trek;
-  TrekCard({this.trek});
+  final Function start;
+  TrekCard({this.trek, this.start });
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +80,10 @@ class TrekCard extends StatelessWidget {
                 ),
                 FlatButton(
                   color: Colors.greenAccent[700],
-                  onPressed: () {},
+                  onPressed: (){
+                    print(trek.difficulty);
+                    start(trek);
+                  },
                   child: Text(
                     "START",
                     style: TextStyle(
