@@ -1,47 +1,17 @@
-import 'package:flutter/material.dart';
-import './trekCard.dart';
-import './treks.dart';
+import "package:flutter/material.dart";
+import "package:trepik/pages/home.dart";
+import "package:trepik/pages/loading.dart";
+import "package:trepik/pages/choose_location.dart";
+import "package:trepik/pages/profile.dart";
+import "package:trepik/pages/trek-page.dart";
 
 void main() => runApp(MaterialApp(
-  home: Treks(),
-));
-
-class Treks extends StatefulWidget {
-  @override
-  _TreksState createState() => _TreksState();
-}
-
-class _TreksState extends State<Treks> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.grey[300],
-          centerTitle: true,
-          elevation: 0,
-          title: Text(
-            "TREPIK",
-            style: TextStyle(
-              color: Colors.grey,
-              letterSpacing: 2.0,
-            ),
-          ),
-        ),
-        body: Container(
-          color: Colors.grey[100],
-          child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: ListView(
-              // for some reason, just making it ListView made it stretch
-              // crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: treks.map((trek) {
-                return TrekCard(
-                  trek: trek,
-                  start: startTrek
-                );
-              }).toList(),
-            ),
-          ),
-        ));
+  initialRoute: '/home', 
+  routes: {
+    '/': (context) => Loading(),
+    '/home': (context) => Home(),
+    '/location': (context) => ChooseLocation(),
+    '/treks': (context) => Treks(),
+    '/profile': (context) => Profile(),
   }
-}
+));

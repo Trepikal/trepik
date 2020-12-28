@@ -1,4 +1,4 @@
-import './trek.dart';
+import '../classes/trek.dart';
 
 startTrek(Trek trek) {
   print(trek.difficulty);

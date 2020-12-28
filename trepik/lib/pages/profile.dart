@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
-      home: HobbitCard(),
-    ));
-
-class HobbitCard extends StatefulWidget {
+class Profile extends StatefulWidget {
   @override
-  _HobbitCardState createState() => _HobbitCardState();
+  _ProfileState createState() => _ProfileState();
 }
 
 // contains a basic visual for a possible first crack at a user profile; nothing special but definitely clean and serviceable.
 
-class _HobbitCardState extends State<HobbitCard> {
+class _ProfileState extends State<Profile> {
   int frodoMileage = 0;
   int bilboMileage = 0;
   int totalMileage = 0;
