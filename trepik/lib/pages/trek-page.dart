@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../components/trekCard.dart';
 import '../data/treks.dart';
+import 'package:trepik/components/general/NavBar.dart';
 
 class Treks extends StatefulWidget {
   @override
@@ -38,6 +39,8 @@ class _TreksState extends State<Treks> {
               }).toList(),
             ),
           ),
-        ));
+        ),
+      bottomNavigationBar: NavBar(startingIndex: 1),
+    );
   }
 }

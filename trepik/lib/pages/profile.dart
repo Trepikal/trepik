@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trepik/components/general/NavBar.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -180,13 +181,7 @@ class _ProfileState extends State<Profile> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        backgroundColor: Colors.greenAccent[700],
-        onPressed: () {
-          addMileage("Frodo", 10);
-        },
-      ),
+      bottomNavigationBar: NavBar(startingIndex: 2),
     );
   }
 }

@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:trepik/components/general/NavBar.dart';
 
 class ChooseLocation extends StatefulWidget {
   @override
@@ -17,6 +18,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
         elevation: 0,
       ),
       body: Text("hey ho location o "),
+      bottomNavigationBar: NavBar(startingIndex: 3),
     );
   }
 }
