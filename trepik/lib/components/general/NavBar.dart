@@ -11,13 +11,13 @@ class _NavBarState extends State<NavBar> {
   // takes an index and navigates to the appropriate page element for navigation.
   void _onItemTapped(int index) {
     if (index == 0)
-      Navigator.pushNamed(context, '/home');
+      Navigator.pushReplacementNamed(context, '/home');
     else if (index == 1)
-      Navigator.pushNamed(context, '/treks');
+      Navigator.pushReplacementNamed(context, '/treks');
     else if (index == 2)
-      Navigator.pushNamed(context, '/profile');
+      Navigator.pushReplacementNamed(context, '/profile');
     else
-      Navigator.pushNamed(context, '/location');
+      Navigator.pushReplacementNamed(context, '/location');
   }
 
   @override

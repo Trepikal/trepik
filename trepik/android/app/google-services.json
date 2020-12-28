@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "440685603327",
+    "project_id": "trepik-3560e",
+    "storage_bucket": "trepik-3560e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:440685603327:android:1f02e23fc635f5f8369fca",
+        "android_client_info": {
+          "package_name": "com.example.trepik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "440685603327-bakhrneop007nk99pfp9i490l3d8snb4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBawIWYxnKfXf7XO_Gn1u4I8697aAHgVVM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "440685603327-bakhrneop007nk99pfp9i490l3d8snb4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
