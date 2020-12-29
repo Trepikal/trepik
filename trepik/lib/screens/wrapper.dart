@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trepik/pages/home.dart';
+import 'package:trepik/screens/home/home.dart';
 import 'package:trepik/screens/authentication/authenticate.dart';
 
 class Wrapper extends StatelessWidget {
