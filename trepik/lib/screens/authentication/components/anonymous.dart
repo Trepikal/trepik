@@ -23,8 +23,11 @@ class _AnonymousSignInState extends State<AnonymousSignIn> {
             if (result == null) {
               print('error signing in anonymously.');
             } else {
+
+              
+
               print('signed in.');
-              print(result);
+              print(result.uid);
             }
           },
           child: Text(
