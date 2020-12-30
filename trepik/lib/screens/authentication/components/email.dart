@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 
-class EmailSignInForm extends StatelessWidget {
+class EmailSignInForm extends StatefulWidget {
   const EmailSignInForm({
     Key key,
   }) : super(key: key);
+
+  @override
+  _EmailSignInFormState createState() => _EmailSignInFormState();
+}
+
+class _EmailSignInFormState extends State<EmailSignInForm> {
+  
+  FocusNode emailFocusNode = new FocusNode();
+  FocusNode passwordFocusNode = new FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +24,36 @@ class EmailSignInForm extends StatelessWidget {
             children: <Widget>[
               SizedBox(height: 30),
               TextFormField(
+                focusNode: emailFocusNode,
                 decoration: InputDecoration(
-                  hintText: 'Email',
+                  labelText: 'EMAIL',
+                  labelStyle: TextStyle(
+                    color: emailFocusNode.hasFocus ? Colors.green : Colors.black,
+                    letterSpacing: 1.5,
+                  ),
+                  border: OutlineInputBorder(),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.green,
+                    ),
+                  ),
                 ),
               ),
               SizedBox(height: 30),
               TextFormField(
-                  decoration: InputDecoration(
-                hintText: 'Password',
-              )),
+                focusNode: passwordFocusNode,
+                decoration: InputDecoration(
+                  labelText: 'PASSWORD',
+                  labelStyle: TextStyle(
+                    color: passwordFocusNode.hasFocus ? Colors.green : Colors.black,
+                    letterSpacing: 1.5,
+                  ),
+                  border: OutlineInputBorder(),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green),
+                  ),
+                ),
+              ),
               SizedBox(height: 30.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,

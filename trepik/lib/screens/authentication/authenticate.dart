@@ -13,19 +13,25 @@ class _AuthenticateState extends State<Authenticate> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        appBar: TrepikAppBar(),
-        body: Padding(
-          padding: const EdgeInsets.all(14.0),
-          child: ListView(
-            children: <Widget>[
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(50.0),
-                  child: EmailSignInForm(),
+        body: Container(
+          child: Padding(
+            padding: const EdgeInsets.all(14.0),
+            child: ListView(
+              children: <Widget>[
+                SizedBox(height: 70.0),
+                Image.asset(
+                  'assets/icon.png',
+                  height: 100.0,
                 ),
-              ),
-              AnonymousSignIn(),
-            ],
+                Container(
+                  child: Padding(
+                    padding: const EdgeInsets.all(50.0),
+                    child: EmailSignInForm(),
+                  ),
+                ),
+                AnonymousSignIn(),
+              ],
+            ),
           ),
         ),
       ),
